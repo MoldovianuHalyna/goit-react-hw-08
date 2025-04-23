@@ -6,6 +6,7 @@ import { fetchContacts } from "./redux/contacts/operations";
 import { ToastContainer } from "react-toastify";
 import Container from "./components/Container/Container";
 import Loader from "./components/Loader/Loader";
+import Layout from "./components/Layout/Layout";
 
 const Homepage = lazy(() => import("./pages/Homepage/Homepage"));
 const RegistrationPage = lazy(() =>
@@ -14,17 +15,13 @@ const RegistrationPage = lazy(() =>
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
 
-const ContactForm = lazy(() => import("./components/ContactForm/ContactForm"));
-const SearchBox = lazy(() => import("./components/SearchBox/SearchBox"));
-const ContactList = lazy(() => import("./components/ContactList/ContactList"));
-
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <Container>
+    <Layout>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
@@ -32,13 +29,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
-        <h1 className={s.header}>Phone Book</h1>
-        <ContactForm />
-        <SearchBox />
-        <ContactList />
+
         <ToastContainer />
       </Suspense>
-    </Container>
+    </Layout>
   );
 }
 
