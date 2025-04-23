@@ -4,7 +4,7 @@ import s from "./Contact.module.css";
 import { useDispatch } from "react-redux";
 import { Slide, toast } from "react-toastify";
 import { MdDeleteOutline } from "react-icons/md";
-import { deleteContactThunk } from "../../redux/contactsOps";
+import { deleteContactThunk } from "../../redux/contacts/operations";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
