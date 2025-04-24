@@ -47,7 +47,7 @@
   }
   &:-webkit-autofill {
     border: 2px solid #714083;
-    -webkit-text-fill-color: #eae4ec;
+    -webkit-text-fill-color: #73547d;
     scale: 1.1;
   }
 }
@@ -78,6 +78,6 @@
   font-weight: 500;
 }
 .customToastAdd {
-  background-color: #64579b;
+  background-color: #0b070da3;
   color: #f0f8ff;
 }
