@@ -10,6 +10,9 @@
   text-align: center;
 }
 .icon {
+  border-radius: 100%;
+  background: linear-gradient(#8b639a, #ccb8d4);
+  padding: 20px;
   color: #714083;
   width: 200px;
   height: 200px;

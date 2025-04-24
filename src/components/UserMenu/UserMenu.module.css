@@ -1,0 +1,31 @@
+.authList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+.userWelcome {
+  color: #714083;
+  text-shadow: 0 4px 10px rgba(241, 237, 241, 0.594);
+}
+
+.button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  max-width: fit-content;
+  align-self: center;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #57316494;
+  color: #f0f8ff;
+  font-size: 20px;
+  transition: all 250ms linear;
+  &:hover,
+  &:active {
+    border: 2px solid #d8e0ed;
+    scale: 1.1;
+  }
+}

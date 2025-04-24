@@ -1,15 +1,46 @@
 import { Field, Formik, Form } from "formik";
 import s from "./RegistrationForm.module.css";
+import { useDispatch } from "react-redux";
+import { registerationThunk } from "../../redux/auth/operations";
+import { Slide, toast } from "react-toastify";
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
     name: "",
     email: "",
     password: "",
   };
-  const handleSubmit = (values, options) => {
-    console.log(values);
-    options.resetForm();
+  const handleSubmit = async ({ name, email, password }, actions) => {
+    try {
+      await dispatch(registerationThunk({ name, email, password })).unwrap();
+      toast("Registered with success", {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
+    } catch (error) {
+      console.log(error);
+      toast("Check email and password and try again", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Slide,
+      });
+    }
+    actions.resetForm();
   };
 
   return (

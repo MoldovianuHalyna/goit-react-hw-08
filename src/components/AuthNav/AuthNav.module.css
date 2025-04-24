@@ -4,18 +4,23 @@
   justify-content: center;
   list-style: none;
   gap: 20px;
-  & > li a {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 20px;
-    color: #f0ffff;
-    background-color: #4e245c75;
-    border-radius: 5px;
-    padding: 5px 15px;
-    transition: all 250ms linear;
-    &:hover {
-      color: #714083;
-      transform: scale(1.1);
-    }
-  }
+  padding-left: 0;
+}
+.link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  color: #f0ffff;
+  background-color: #4e245c75;
+  border-radius: 5px;
+  padding: 5px 15px;
+  transition: all 250ms linear;
+}
+.active {
+  background-color: #4e245c75;
+  border-radius: 5px;
+  padding: 5px 15px;
+  text-decoration: none;
+  color: #714083;
+  font-size: 30px;
 }
