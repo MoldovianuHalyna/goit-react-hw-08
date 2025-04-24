@@ -5,16 +5,10 @@ import { useDispatch } from "react-redux";
 import { Slide, toast } from "react-toastify";
 import { MdDeleteOutline } from "react-icons/md";
 import { deleteContactThunk } from "../../redux/contacts/operations";
-import ModalImage from "../Modal/Modal";
-import { useState } from "react";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
-
-  const confirmDelete = () => {
+  const onDelete = (id) => {
     dispatch(deleteContactThunk(id));
     toast.success("Contact deleted successfully", {
       position: "bottom-center",
@@ -29,34 +23,25 @@ const Contact = ({ id, name, number }) => {
       transition: Slide,
       icon: <MdDeleteOutline />,
     });
-    closeModal();
   };
   return (
-    <>
-      <div className={s.contactItem}>
-        <p className={s.contactItemText}>
-          <FaUser />
-          {name}
-        </p>
-        <p className={s.contactItemText}>
-          <FaPhoneAlt />
-          {number}
-        </p>
-        <button
-          className={s.buttonDeleteContact}
-          onClick={openModal}
-          type="button"
-        >
-          Delete
-        </button>
-      </div>
-      <ModalImage
-        modalIsOpen={modalIsOpen}
-        closeModal={closeModal}
-        onConfirm={confirmDelete}
-        picture={null}
-      />
-    </>
+    <div className={s.contactItem}>
+      <p className={s.contactItemText}>
+        <FaUser />
+        {name}
+      </p>
+      <p className={s.contactItemText}>
+        <FaPhoneAlt />
+        {number}
+      </p>
+      <button
+        className={s.buttonDeleteContact}
+        onClick={() => onDelete(id)}
+        type="button"
+      >
+        Delete
+      </button>
+    </div>
   );
 };
 
