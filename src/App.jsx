@@ -4,9 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchContacts } from "./redux/contacts/operations";
 import { ToastContainer } from "react-toastify";
-import Container from "./components/Container/Container";
+
 import Loader from "./components/Loader/Loader";
 import Layout from "./components/Layout/Layout";
+import NotFound from "./components/NotFound/NotFound";
 
 const Homepage = lazy(() => import("./pages/Homepage/Homepage"));
 const RegistrationPage = lazy(() =>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <ToastContainer />

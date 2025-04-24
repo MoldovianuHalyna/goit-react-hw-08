@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-
+import s from "./AuthNav.module.css";
 const AuthNav = () => {
   return (
-    <ul>
+    <ul className={s.authList}>
       <li>
         <NavLink to="/login">Log In</NavLink>
       </li>

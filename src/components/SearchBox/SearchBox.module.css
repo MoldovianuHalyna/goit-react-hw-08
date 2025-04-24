@@ -1,19 +1,20 @@
 .searchContainer {
-  color: #5c49b6;
+  color: #573164;
+  text-shadow: 1px 1px 2px #c9b9ce;
   text-transform: uppercase;
   text-align: center;
   font-size: 25px;
 }
 .searchInput {
   outline: transparent;
-  border: 2px solid #5c49b6;
+  border: 2px solid #573164;
   color: #f0f8ff;
   height: auto;
   background-color: transparent;
   padding: 0 10px 0 10px;
   border-radius: 4px;
   transition: all 250ms linear;
-  background-color: #6e5cc7;
+  background-color: #8c579d;
   &::placeholder {
     color: hsla(208, 100%, 97%, 0.456);
     opacity: 1;
@@ -23,20 +24,20 @@
     opacity: 0;
   }
   &:hover {
-    color: #6e5cc7;
+    color: #573164;
     border: 2px solid #c1d4f0;
     background-color: transparent;
     scale: 1.1;
   }
   &:active {
-    color: #6e5cc7;
+    color: #573164;
     border: 2px solid #c1d4f0;
     background-color: transparent;
     scale: 1.1;
   }
   &:-webkit-autofill {
     border: 2px solid #9188c2;
-    -webkit-text-fill-color: #6e5cc7;
+    -webkit-text-fill-color: #573164;
     scale: 1.1;
   }
 }

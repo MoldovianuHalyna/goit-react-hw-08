@@ -6,9 +6,11 @@
   align-items: center;
 }
 .header {
+  color: #714083;
   text-align: center;
 }
 .icon {
+  color: #714083;
   width: 200px;
   height: 200px;
 }

@@ -7,7 +7,7 @@ const tata = false; //change on userLoggedIn
 
 const AppBar = () => {
   return (
-    <div className={s.header}>
+    <div className={s.mainNavBar}>
       <Navigation />
       {tata ? <UserMenu /> : <AuthNav />}
     </div>

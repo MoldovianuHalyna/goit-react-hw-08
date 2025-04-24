@@ -4,12 +4,12 @@
   flex-direction: column;
   max-width: 500px;
   height: auto;
-  background: linear-gradient(#5c49b6, #a39dc1);
+  background: linear-gradient(#714083, #a39dc1);
   border-radius: 10px;
   color: #f0f8ff;
   padding-left: 20px;
   padding-right: 20px;
-  box-shadow: 10px 10px 20px #5c49b6;
+  box-shadow: 10px 10px 20px #714083;
   & h3 {
     margin: 10px;
   }
@@ -27,7 +27,7 @@
 }
 .formInput {
   outline: transparent;
-  border: 2px solid #615793;
+  border: 2px solid #89529b;
   color: #f0f8ff;
   width: 100%;
   height: auto;
@@ -36,18 +36,18 @@
   border-radius: 4px;
   transition: all 250ms linear;
   &:hover {
-    border: 2px solid #8f84c6;
+    border: 2px solid #714083;
     background-color: transparent;
     scale: 1.1;
   }
   &:active {
-    border: 2px solid #8f84c6;
+    border: 2px solid #714083;
     background-color: transparent;
     scale: 1.1;
   }
   &:-webkit-autofill {
-    border: 2px solid #8f84c6;
-    -webkit-text-fill-color: #5c49b6;
+    border: 2px solid #714083;
+    -webkit-text-fill-color: #eae4ec;
     scale: 1.1;
   }
 }
@@ -60,7 +60,7 @@
   border-radius: 4px;
   padding: 10px 20px 10px 20px;
   cursor: pointer;
-  background-color: #5c49b6;
+  background-color: #714083;
   color: #f0f8ff;
   font-size: 20px;
   transition: all 250ms linear;
@@ -71,7 +71,7 @@
   }
 }
 .error {
-  color: rgb(212, 75, 209);
+  color: #543160;
   font-size: 16px;
   position: absolute;
   bottom: -35px;
