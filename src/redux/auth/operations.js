@@ -13,7 +13,7 @@ const clearAuthHeader = () => {
   authentificationInstance.defaults.headers.common.Authorization = "";
 };
 
-export const registerationThunk = createAsyncThunk(
+export const registrationThunk = createAsyncThunk(
   "auth/register",
   async (credentials, thunkAPI) => {
     try {
@@ -29,7 +29,7 @@ export const registerationThunk = createAsyncThunk(
   }
 );
 
-export const loginThuk = createAsyncThunk(
+export const loginThunk = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
@@ -51,6 +51,23 @@ export const logoutThunk = createAsyncThunk(
     try {
       await authentificationInstance.post("/users/logout");
       clearAuthHeader();
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const refreshUserThunk = createAsyncThunk(
+  "refresh",
+  async (_, thunkAPI) => {
+    const savedToken = thunkAPI.getState().authorization.token;
+    if (!savedToken) {
+      return thunkAPI.rejectWithValue("token doesn't exist!");
+    }
+    setAuthHeader(savedToken);
+
+    try {
+      const response = await authentificationInstance.get("/users/current");
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

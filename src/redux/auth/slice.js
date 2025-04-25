@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginThuk, logoutThunk, registerationThunk } from "./operations";
+import {
+  loginThunk,
+  logoutThunk,
+  refreshUserThunk,
+  registrationThunk,
+} from "./operations";
 
 const initialState = {
   user: {
@@ -9,36 +14,49 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isLoading: false,
+  isRefreshing: false,
 };
 const slice = createSlice({
   name: "authorization",
   initialState,
   extraReducers: (builder) =>
     builder
-      .addCase(registerationThunk.pending, (state) => {
+      .addCase(registrationThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(registerationThunk.fulfilled, (state, action) => {
+      .addCase(registrationThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(registerationThunk.rejected, (state) => {
+      .addCase(registrationThunk.rejected, (state) => {
         state.isLoading = false;
       })
-      .addCase(loginThuk.pending, (state) => {
+      .addCase(loginThunk.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(loginThuk.fulfilled, (state, action) => {
+      .addCase(loginThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(loginThuk.rejected, (state) => {
+      .addCase(loginThunk.rejected, (state) => {
         state.isLoading = false;
       })
+      .addCase(refreshUserThunk.pending, (state) => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUserThunk.rejected, (state) => {
+        state.isRefreshing = false;
+      })
+      .addCase(refreshUserThunk.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+
       .addCase(logoutThunk.pending, (state) => {
         state.isLoading = true;
       })

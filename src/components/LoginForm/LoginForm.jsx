@@ -1,8 +1,9 @@
 import { Field, Formik, Form } from "formik";
 import s from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
-import { loginThuk } from "../../redux/auth/operations";
+
 import { Slide, toast } from "react-toastify";
+import { loginThunk } from "../../redux/auth/operations";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const LoginForm = () => {
   };
   const handleSubmit = async (values, actions) => {
     try {
-      await dispatch(loginThuk(values)).unwrap();
+      await dispatch(loginThunk(values)).unwrap();
       toast("Logged in successfully", {
         position: "bottom-center",
         autoClose: 3000,
