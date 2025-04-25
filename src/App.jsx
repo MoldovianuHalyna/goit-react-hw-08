@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     dispatch(refreshUserThunk());
   }, [dispatch]);
+
   return (
     <Layout>
       <Suspense fallback={<Loader />}>

@@ -3,6 +3,7 @@ import Contact from "../Contact/Contact";
 import Grid from "../Grid/Grid";
 import s from "./ContactList.module.css";
 import { selectFilteredContacts } from "../../redux/filters/selectors";
+import Loader from "../Loader/Loader";
 
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
@@ -11,7 +12,7 @@ const ContactList = () => {
   const isError = useSelector((state) => state.contacts.isError);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Loader />;
   }
 
   if (isError) {
