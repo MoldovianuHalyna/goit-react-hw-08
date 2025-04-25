@@ -1,8 +1,9 @@
 import { Field, Formik, Form } from "formik";
 import s from "./RegistrationForm.module.css";
 import { useDispatch } from "react-redux";
-import { registerationThunk } from "../../redux/auth/operations";
+
 import { Slide, toast } from "react-toastify";
+import { registrationThunk } from "../../redux/auth/operations";
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const RegistrationForm = () => {
   };
   const handleSubmit = async ({ name, email, password }, actions) => {
     try {
-      await dispatch(registerationThunk({ name, email, password })).unwrap();
+      await dispatch(registrationThunk({ name, email, password })).unwrap();
       toast("Registered with success", {
         position: "bottom-center",
         autoClose: 3000,
