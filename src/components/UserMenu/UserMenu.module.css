@@ -8,6 +8,11 @@
 .userWelcome {
   color: #714083;
   text-shadow: 0 4px 10px rgba(241, 237, 241, 0.594);
+  & > span {
+    padding-left: 4px;
+    font-size: 25px;
+    color: #f0f8ff;
+  }
 }
 
 .button {

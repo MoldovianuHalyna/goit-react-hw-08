@@ -39,7 +39,9 @@ const UserMenu = () => {
   };
   return (
     <div className={s.authList}>
-      <p className={s.userWelcome}>Welcome,{user.name} </p>
+      <p className={s.userWelcome}>
+        Welcome,<span>{user.name} </span>
+      </p>
       <button type="button" onClick={handleLogout} className={s.button}>
         Logout
       </button>

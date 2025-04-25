@@ -46,6 +46,9 @@ const RegistrationForm = () => {
 
   return (
     <div className={s.formWrapper}>
+      <h1 className={s.header}>
+        To be able to use the full functionnality please register now
+      </h1>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.form}>
           <label>

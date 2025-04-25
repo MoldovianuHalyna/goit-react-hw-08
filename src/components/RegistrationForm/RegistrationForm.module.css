@@ -1,3 +1,7 @@
+.header {
+  color: #714083;
+  text-align: center;
+}
 .formWrapper {
   display: flex;
   flex-direction: column;
