@@ -25,7 +25,7 @@
   transition: all 250ms linear;
   &:hover,
   &:active {
-    border: 2px solid #d8e0ed;
-    scale: 1.1;
+    background-color: #f0f8ff;
+    color: #714083;
   }
 }
