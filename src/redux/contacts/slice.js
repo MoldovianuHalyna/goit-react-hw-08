@@ -47,7 +47,8 @@ const slice = createSlice({
         isAnyOf(
           fetchContacts.pending,
           deleteContactThunk.pending,
-          addContactThunk.pending
+          addContactThunk.pending,
+          logoutThunk.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -57,7 +58,8 @@ const slice = createSlice({
         isAnyOf(
           fetchContacts.rejected,
           deleteContactThunk.rejected,
-          addContactThunk.rejected
+          addContactThunk.rejected,
+          logoutThunk.rejected
         ),
         (state, action) => {
           state.isError = action.payload;

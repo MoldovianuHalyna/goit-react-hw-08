@@ -16,6 +16,7 @@ const ContactsPage = () => {
       dispatch(fetchContacts());
     }
   }, [dispatch, isLoggedIn]);
+
   return (
     <div className={s.wrapper}>
       <ContactForm />
